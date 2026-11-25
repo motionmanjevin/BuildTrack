@@ -1,0 +1,231 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BuildTrack | Dashboard</title>
+
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <h2 class="logo">Build<span>Track</span></h2>
+
+            <p class="menu-title">MAIN MENU</p>
+
+            <nav>
+                <a href="dashboard.html" class="active">Dashboard</a>
+                <a href="#">Inventory</a>
+                <a href="#">Stock Alerts</a>
+                <a href="#">Projects</a>
+                <a href="#">Tasks</a>
+                <a href="#">Material Allocation</a>
+                <a href="#">Suppliers</a>
+                <a href="#">Reports</a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <a href="#">Settings</a>
+                <a href="index.html">Logout</a>
+            </div>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+            <!-- TOPBAR -->
+            <header class="topbar">
+
+                <div>
+                    <h2>Dashboard</h2>
+                    <p>Welcome back! Here's what's happening today.</p>
+                </div>
+
+                <div class="user-profile">
+                    <div class="user-avatar">AD</div>
+                    <div>
+                        <h4>Admin User</h4>
+                        <small>Administrator</small>
+                    </div>
+                </div>
+
+            </header>
+
+
+            <!-- SUMMARY CARDS -->
+            <section class="summary-cards">
+
+                <div class="summary-card">
+                    <p>Total Materials</p>
+                    <h2>1,250</h2>
+                    <small>Items in inventory</small>
+                </div>
+
+                <div class="summary-card">
+                    <p>Active Projects</p>
+                    <h2>08</h2>
+                    <small>Currently running</small>
+                </div>
+
+                <div class="summary-card">
+                    <p>Low Stock Items</p>
+                    <h2>12</h2>
+                    <small>Require attention</small>
+                </div>
+
+                <div class="summary-card">
+                    <p>Pending Tasks</p>
+                    <h2>24</h2>
+                    <small>Tasks awaiting completion</small>
+                </div>
+
+            </section>
+
+
+            <!-- DASHBOARD CONTENT -->
+            <section class="dashboard-grid">
+
+                <!-- PROJECT PROGRESS -->
+                <div class="dashboard-card project-card">
+
+                    <div class="card-heading">
+                        <h3>Project Progress</h3>
+                        <a href="#">View All</a>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="project-info">
+                            <h4>Residential Building</h4>
+                            <span>75%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div style="width: 75%"></div>
+                        </div>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="project-info">
+                            <h4>Commercial Complex</h4>
+                            <span>50%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div style="width: 50%"></div>
+                        </div>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="project-info">
+                            <h4>Road Construction</h4>
+                            <span>30%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div style="width: 30%"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- RECENT ACTIVITIES -->
+                <div class="dashboard-card activity-card">
+
+                    <div class="card-heading">
+                        <h3>Recent Activities</h3>
+                        <a href="#">View All</a>
+                    </div>
+
+                    <div class="activity-item">
+                        <div>
+                            <h4>Cement added</h4>
+                            <p>50 bags added to inventory</p>
+                        </div>
+                        <small>Today</small>
+                    </div>
+
+                    <div class="activity-item">
+                        <div>
+                            <h4>New project created</h4>
+                            <p>Residential Building</p>
+                        </div>
+                        <small>Yesterday</small>
+                    </div>
+
+                    <div class="activity-item">
+                        <div>
+                            <h4>Material allocated</h4>
+                            <p>Steel rods allocated to project</p>
+                        </div>
+                        <small>Yesterday</small>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- LOW STOCK TABLE -->
+            <section class="dashboard-card stock-card">
+
+                <div class="card-heading">
+                    <h3>Low Stock Materials</h3>
+                    <a href="#">View Inventory</a>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Material</th>
+                            <th>Category</th>
+                            <th>Available Quantity</th>
+                            <th>Reorder Level</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>Cement</td>
+                            <td>Building Materials</td>
+                            <td>15 Bags</td>
+                            <td>30 Bags</td>
+                            <td><span class="status low">Low Stock</span></td>
+                        </tr>
+
+                        <tr>
+                            <td>Iron Rods</td>
+                            <td>Steel Materials</td>
+                            <td>10 Pieces</td>
+                            <td>25 Pieces</td>
+                            <td><span class="status low">Low Stock</span></td>
+                        </tr>
+
+                        <tr>
+                            <td>Paint</td>
+                            <td>Finishing Materials</td>
+                            <td>8 Buckets</td>
+                            <td>20 Buckets</td>
+                            <td><span class="status low">Low Stock</span></td>
+                        </tr>
+                    </tbody>
+
+                </table>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</body>
+</html>

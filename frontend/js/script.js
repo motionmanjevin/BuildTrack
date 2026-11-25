@@ -22,14 +22,11 @@ loginForm.addEventListener("submit", function (event) {
     const password = passwordInput.value;
 
     if (email === "" || password === "") {
-       loginMessage.textContent = "Please enter your email and password.";
-loginMessage.style.color = "red";
+        alert("Please enter your email and password.");
         return;
     }
 
-   const loginMessage = document.getElementById("loginMessage");
-
-loginMessage.textContent = "Form validation successful!";
-loginMessage.style.color = "green";
+    // Open the dashboard
+    window.location.href = "dashboard.html";
 
 });
