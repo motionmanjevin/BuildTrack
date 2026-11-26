@@ -1,0 +1,169 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BuildTrack - User Management</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/user-management.css">
+</head>
+<body>
+
+<div class="dashboard-container">
+
+    <aside class="sidebar">
+        <h2>BuildTrack</h2>
+        <nav>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="inventory.html">Inventory</a>
+            <a href="stock-alerts.html">Stock Alerts</a>
+            <a href="projects.html">Projects</a>
+            <a href="tasks.html">Tasks</a>
+            <a href="material-allocation.html">Material Allocation</a>
+            <a href="suppliers.html">Suppliers</a>
+            <a href="reports.html">Reports</a>
+            <a href="user-management.html" class="active">User Management</a>
+            <a href="index.html">Logout</a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <h1>User Management</h1>
+            <p>Manage BuildTrack system users and access roles</p>
+        </header>
+
+        <section class="summary-cards">
+            <div class="summary-card">
+                <h3>Total Users</h3>
+                <p>12</p>
+            </div>
+            <div class="summary-card">
+                <h3>Active Users</h3>
+                <p>10</p>
+            </div>
+            <div class="summary-card">
+                <h3>Inactive Users</h3>
+                <p>02</p>
+            </div>
+            <div class="summary-card">
+                <h3>Administrators</h3>
+                <p>03</p>
+            </div>
+        </section>
+
+        <section class="users-section">
+
+            <div class="section-header">
+                <h2>System Users</h2>
+                <button id="addUserBtn">+ Add User</button>
+            </div>
+
+            <div class="table-controls">
+                <input type="search" id="userSearch"
+                    placeholder="Search users...">
+
+                <select id="userFilter">
+                    <option value="">All Statuses</option>
+                    <option value="Active">Active</option>
+                    <option value="Inactive">Inactive</option>
+                </select>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>User ID</th>
+                            <th>Full Name</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                            <th>Phone</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="userTable">
+                        <tr>
+                            <td>USR001</td>
+                            <td>Admin User</td>
+                            <td>admin@buildtrack.com</td>
+                            <td>Administrator</td>
+                            <td>0240000001</td>
+                            <td><span class="user-status active">Active</span></td>
+                            <td><button class="edit-button">Edit</button></td>
+                        </tr>
+
+                        <tr>
+                            <td>USR002</td>
+                            <td>Kwame Mensah</td>
+                            <td>kwame@buildtrack.com</td>
+                            <td>Project Manager</td>
+                            <td>0240000002</td>
+                            <td><span class="user-status active">Active</span></td>
+                            <td><button class="edit-button">Edit</button></td>
+                        </tr>
+
+                        <tr>
+                            <td>USR003</td>
+                            <td>Akosua Owusu</td>
+                            <td>akosua@buildtrack.com</td>
+                            <td>Storekeeper</td>
+                            <td>0240000003</td>
+                            <td><span class="user-status inactive">Inactive</span></td>
+                            <td><button class="edit-button">Edit</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+
+        <div class="modal" id="userModal">
+            <div class="modal-content">
+
+                <button type="button" id="closeUserModal">×</button>
+
+                <h2>Add New User</h2>
+
+                <form id="userForm">
+
+                    <label>Full Name</label>
+                    <input type="text" id="userName" required>
+
+                    <label>Email</label>
+                    <input type="email" id="userEmail" required>
+
+                    <label>Phone Number</label>
+                    <input type="tel" id="userPhone" required>
+
+                    <label>Role</label>
+                    <select id="userRole" required>
+                        <option value="">Select Role</option>
+                        <option>Administrator</option>
+                        <option>Project Manager</option>
+                        <option>Storekeeper</option>
+                        <option>Procurement Officer</option>
+                    </select>
+
+                    <label>Status</label>
+                    <select id="userStatus">
+                        <option>Active</option>
+                        <option>Inactive</option>
+                    </select>
+
+                    <button type="submit">Save User</button>
+
+                </form>
+            </div>
+        </div>
+
+    </main>
+</div>
+
+<script src="js/user-management.js"></script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+
+.users-section {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    margin-top: 25px;
+}
+
+.section-header,
+.table-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.section-header button,
+#userForm button {
+    background: #f28c28;
+    color: white;
+    border: none;
+    padding: 11px 18px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.table-controls input,
+.table-controls select {
+    padding: 11px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+.users-section table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.users-section th,
+.users-section td {
+    padding: 14px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.users-section th {
+    background: #f5f6fa;
+}
+
+.user-status {
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 12px;
+}
+
+.user-status.active {
+    background: #e2f7e9;
+    color: #16803c;
+}
+
+.user-status.inactive {
+    background: #ffe6e6;
+    color: #c0392b;
+}
+
+.edit-button {
+    background: #e8eefc;
+    color: #2454a6;
+    border: none;
+    padding: 7px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Add User Modal */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    width: 420px;
+    max-width: 90%;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+#closeUserModal {
+    float: right;
+    border: none;
+    background: none;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+#userForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#userForm input,
+#userForm select {
+    padding: 11px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+@media (max-width: 600px) {
+    .section-header,
+    .table-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
