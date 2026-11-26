@@ -1,0 +1,199 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BuildTrack | Projects</title>
+    <link rel="stylesheet" href="css/projects.css">
+</head>
+<body>
+
+<div class="dashboard-container">
+
+    <aside class="sidebar">
+        <h2 class="logo">Build<span>Track</span></h2>
+        <p class="menu-title">MAIN MENU</p>
+
+        <nav>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="inventory.html">Inventory</a>
+            <a href="stock-alerts.html">Stock Alerts</a>
+            <a href="projects.html" class="active">Projects</a>
+            <a href="#">Tasks</a>
+            <a href="#">Material Allocation</a>
+            <a href="#">Suppliers</a>
+            <a href="#">Reports</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="#">Settings</a>
+            <a href="index.html">Logout</a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <h2>Projects Management</h2>
+                <p>Manage construction projects and monitor progress.</p>
+            </div>
+
+            <div class="user-profile">
+                <div class="user-avatar">AD</div>
+                <div>
+                    <h4>Admin User</h4>
+                    <small>Administrator</small>
+                </div>
+            </div>
+        </header>
+
+        <section class="project-summary">
+
+            <div class="summary-card">
+                <p>Total Projects</p>
+                <h2>12</h2>
+            </div>
+
+            <div class="summary-card">
+                <p>Active Projects</p>
+                <h2>08</h2>
+            </div>
+
+            <div class="summary-card">
+                <p>Completed Projects</p>
+                <h2>04</h2>
+            </div>
+
+        </section>
+
+        <section class="projects-section">
+
+            <div class="section-heading">
+                <div>
+                    <h3>All Projects</h3>
+                    <p>View and manage your construction projects.</p>
+                </div>
+
+                <button class="add-button" id="addProjectBtn">
+                    + Add Project
+                </button>
+            </div>
+
+            <div class="project-tools">
+                <input type="search" id="projectSearch"
+                    placeholder="Search projects...">
+
+                <select id="projectFilter">
+                    <option value="">All Statuses</option>
+                    <option>Planning</option>
+                    <option>In Progress</option>
+                    <option>Completed</option>
+                </select>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Project ID</th>
+                            <th>Project Name</th>
+                            <th>Location</th>
+                            <th>Start Date</th>
+                            <th>Deadline</th>
+                            <th>Progress</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="projectTable">
+
+                        <tr>
+                            <td>PRJ001</td>
+                            <td>Residential Building</td>
+                            <td>Kumasi</td>
+                            <td>2026-01-10</td>
+                            <td>2026-12-20</td>
+                            <td>75%</td>
+                            <td><span class="status progress">In Progress</span></td>
+                            <td><button class="edit-button">Edit</button></td>
+                        </tr>
+
+                        <tr>
+                            <td>PRJ002</td>
+                            <td>Commercial Complex</td>
+                            <td>Accra</td>
+                            <td>2026-02-15</td>
+                            <td>2026-11-30</td>
+                            <td>50%</td>
+                            <td><span class="status progress">In Progress</span></td>
+                            <td><button class="edit-button">Edit</button></td>
+                        </tr>
+
+                        <tr>
+                            <td>PRJ003</td>
+                            <td>Road Construction</td>
+                            <td>Sunyani</td>
+                            <td>2026-03-01</td>
+                            <td>2026-10-30</td>
+                            <td>100%</td>
+                            <td><span class="status completed">Completed</span></td>
+                            <td><button class="edit-button">Edit</button></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+
+<div class="modal" id="projectModal">
+    <div class="modal-content">
+
+        <div class="modal-heading">
+            <h3>Add New Project</h3>
+            <button type="button" id="closeProjectModal">&times;</button>
+        </div>
+
+        <form id="projectForm">
+
+            <label>Project Name</label>
+            <input type="text" id="projectName" required>
+
+            <label>Location</label>
+            <input type="text" id="projectLocation" required>
+
+            <label>Start Date</label>
+            <input type="date" id="startDate" required>
+
+            <label>Deadline</label>
+          <input
+    type="search"
+    id="projectSearch"
+    placeholder="Search projects..."
+>
+
+<select id="projectFilter">
+    <option value="">All Statuses</option>
+    <option>Planning</option>
+    <option>In Progress</option>
+    <option>Completed</option>
+</select>
+
+            <button type="submit" class="add-button">
+                Save Project
+            </button>
+
+        </form>
+    </div>
+</div>
+
+    </main>
+
+</div>
+
+<script src="js/projects.js"></script>
+</body>
+</html>

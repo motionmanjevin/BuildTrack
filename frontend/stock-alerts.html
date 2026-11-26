@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BuildTrack | Stock Alerts</title>
+    <link rel="stylesheet" href="css/stock-alerts.css">
+</head>
+<body>
+
+<div class="dashboard-container">
+
+    <aside class="sidebar">
+        <h2 class="logo">Build<span>Track</span></h2>
+
+        <p class="menu-title">MAIN MENU</p>
+
+        <nav>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="inventory.html">Inventory</a>
+            <a href="stock-alerts.html" class="active">Stock Alerts</a>
+            <a href="projects.html">Projects</a>
+            <a href="#">Tasks</a>
+            <a href="#">Material Allocation</a>
+            <a href="#">Suppliers</a>
+            <a href="#">Reports</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="#">Settings</a>
+            <a href="index.html">Logout</a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <h2>Stock Alerts</h2>
+                <p>Monitor materials that require restocking.</p>
+            </div>
+
+            <div class="user-profile">
+                <div class="user-avatar">AD</div>
+                <div>
+                    <h4>Admin User</h4>
+                    <small>Administrator</small>
+                </div>
+            </div>
+        </header>
+
+        <section class="alert-summary">
+
+            <div class="alert-card">
+                <p>Total Low Stock Items</p>
+                <h2>12</h2>
+            </div>
+
+            <div class="alert-card">
+                <p>Out of Stock</p>
+                <h2>03</h2>
+            </div>
+
+            <div class="alert-card">
+                <p>Items Requiring Attention</p>
+                <h2>15</h2>
+            </div>
+
+        </section>
+
+        <section class="alert-section">
+
+            <div class="section-heading">
+                <div>
+                    <h3>Materials Requiring Attention</h3>
+                    <p>Materials that need restocking or replenishment.</p>
+                </div>
+            </div>
+
+            <div class="alert-tools">
+                <input type="search" id="alertSearch"
+                    placeholder="Search materials...">
+
+                <select id="alertFilter">
+                    <option value="">All Statuses</option>
+                    <option value="Low Stock">Low Stock</option>
+                    <option value="Out of Stock">Out of Stock</option>
+                </select>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Material ID</th>
+                            <th>Material Name</th>
+                            <th>Category</th>
+                            <th>Available Quantity</th>
+                            <th>Reorder Level</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="alertTable">
+
+                        <tr>
+                            <td>MAT002</td>
+                            <td>Iron Rods</td>
+                            <td>Steel Materials</td>
+                            <td>10</td>
+                            <td>25</td>
+                            <td><span class="status low">Low Stock</span></td>
+                            <td><a href="inventory.html">View</a></td>
+                        </tr>
+
+                        <tr>
+                            <td>MAT003</td>
+                            <td>Paint</td>
+                            <td>Finishing Materials</td>
+                            <td>0</td>
+                            <td>20</td>
+                            <td><span class="status out">Out of Stock</span></td>
+                            <td><a href="inventory.html">View</a></td>
+                        </tr>
+
+                        <tr>
+                            <td>MAT005</td>
+                            <td>Roofing Nails</td>
+                            <td>Building Materials</td>
+                            <td>15</td>
+                            <td>30</td>
+                            <td><span class="status low">Low Stock</span></td>
+                            <td><a href="inventory.html">View</a></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="js/stock-alerts.js"></script>
+</body>
+</html>

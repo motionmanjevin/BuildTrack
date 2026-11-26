@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BuildTrack | Inventory</title>
+    <link rel="stylesheet" href="css/inventory.css">
+</head>
+<body>
+
+    <div class="dashboard-container">
+
+        <aside class="sidebar">
+            <h2 class="logo">Build<span>Track</span></h2>
+
+            <p class="menu-title">MAIN MENU</p>
+
+            <nav>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="inventory.html" class="active">Inventory</a>
+                <a href="stock-alerts.html">Stock Alerts</a>
+                <a href="projects.html">Projects</a>
+                <a href="#">Tasks</a>
+                <a href="#">Material Allocation</a>
+                <a href="#">Suppliers</a>
+                <a href="#">Reports</a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <a href="#">Settings</a>
+                <a href="index.html">Logout</a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+
+            <header class="topbar">
+                <div>
+                    <h2>Inventory Management</h2>
+                    <p>Manage and monitor your construction materials.</p>
+                </div>
+
+                <div class="user-profile">
+                    <div class="user-avatar">AD</div>
+                    <div>
+                        <h4>Admin User</h4>
+                        <small>Administrator</small>
+                    </div>
+                </div>
+            </header>
+
+            <section class="inventory-summary">
+                <div class="summary-card">
+                    <p>Total Materials</p>
+                    <h2>1,250</h2>
+                </div>
+
+                <div class="summary-card">
+                    <p>Available Materials</p>
+                    <h2>1,180</h2>
+                </div>
+
+                <div class="summary-card">
+                    <p>Low Stock Items</p>
+                    <h2>12</h2>
+                </div>
+
+                <div class="summary-card">
+                    <p>Material Categories</p>
+                    <h2>08</h2>
+                </div>
+            </section>
+
+            <section class="inventory-section">
+
+                <div class="inventory-heading">
+                    <div>
+                        <h3>Materials Inventory</h3>
+                        <p>View and manage all stored materials.</p>
+                    </div>
+
+                  <button class="add-button" id="addMaterialBtn">+ Add Material</button> 
+                </div>
+
+                <div class="inventory-tools">
+                   <input
+    type="search"
+    id="searchMaterial"
+    placeholder="Search materials..."
+>
+
+<select id="categoryFilter">
+    <option value="">All Categories</option>
+    <option>Building Materials</option>
+    <option>Steel Materials</option>
+    <option>Finishing Materials</option>
+</select>
+                </div>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Material ID</th>
+                                <th>Material Name</th>
+                                <th>Category</th>
+                                <th>Quantity</th>
+                                <th>Unit</th>
+                                <th>Reorder Level</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>MAT001</td>
+                                <td>Cement</td>
+                                <td>Building Materials</td>
+                                <td>150</td>
+                                <td>Bags</td>
+                                <td>30</td>
+                                <td><span class="status available">Available</span></td>
+                                <td><button class="edit-button">Edit</button></td>
+                            </tr>
+
+                            <tr>
+                                <td>MAT002</td>
+                                <td>Iron Rods</td>
+                                <td>Steel Materials</td>
+                                <td>10</td>
+                                <td>Pieces</td>
+                                <td>25</td>
+                                <td><span class="status low">Low Stock</span></td>
+                                <td><button class="edit-button">Edit</button></td>
+                            </tr>
+
+                            <tr>
+                                <td>MAT003</td>
+                                <td>Paint</td>
+                                <td>Finishing Materials</td>
+                                <td>8</td>
+                                <td>Buckets</td>
+                                <td>20</td>
+                                <td><span class="status low">Low Stock</span></td>
+                                <td><button class="edit-button">Edit</button></td>
+                            </tr>
+
+                            <tr>
+                                <td>MAT004</td>
+                                <td>Roofing Sheets</td>
+                                <td>Building Materials</td>
+                                <td>200</td>
+                                <td>Pieces</td>
+                                <td>50</td>
+                                <td><span class="status available">Available</span></td>
+                                <td><button class="edit-button">Edit</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </section>
+<div class="modal" id="materialModal">
+    <div class="modal-content">
+        <div class="modal-heading">
+            <h3>Add New Material</h3>
+            <button id="closeModal">&times;</button>
+        </div>
+
+        <form id="materialForm">
+            <label>Material Name</label>
+            <input type="text" id="materialName" required>
+
+            <label>Category</label>
+            <select id="materialCategory" required>
+                <option value="">Select Category</option>
+                <option>Building Materials</option>
+                <option>Steel Materials</option>
+                <option>Finishing Materials</option>
+            </select>
+
+            <label>Quantity</label>
+            <input type="number" id="materialQuantity" min="0" required>
+
+            <label>Unit</label>
+            <input type="text" id="materialUnit" placeholder="e.g. Bags, Pieces" required>
+
+            <label>Reorder Level</label>
+            <input type="number" id="reorderLevel" min="0" required>
+
+            <button type="submit" class="add-button">Save Material</button>
+        </form>
+    </div>
+</div>
+        </main>
+
+    </div>
+<script src="js/inventory.js"></script>
+</body>
+</html>
