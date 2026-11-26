@@ -1,0 +1,172 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BuildTrack - Material Allocation</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/material-allocation.css">
+</head>
+<body>
+
+<div class="dashboard-container">
+
+    <aside class="sidebar">
+        <h2>BuildTrack</h2>
+        <nav>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="inventory.html">Inventory</a>
+            <a href="stock-alerts.html">Stock Alerts</a>
+            <a href="projects.html">Projects</a>
+            <a href="tasks.html">Tasks</a>
+            <a href="material-allocation.html" class="active">Material Allocation</a>
+            <a href="suppliers.html">Suppliers</a>
+            <a href="reports.html">Reports</a>
+            <a href="index.html">Logout</a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <h1>Material Allocation</h1>
+            <p>Assign inventory materials to projects and tasks</p>
+        </header>
+
+        <section class="summary-cards">
+            <div class="summary-card">
+                <h3>Total Allocations</h3>
+                <p>35</p>
+            </div>
+            <div class="summary-card">
+                <h3>Materials Allocated</h3>
+                <p>120</p>
+            </div>
+            <div class="summary-card">
+                <h3>Projects Supplied</h3>
+                <p>08</p>
+            </div>
+            <div class="summary-card">
+                <h3>Pending Allocations</h3>
+                <p>05</p>
+            </div>
+        </section>
+
+        <section class="allocation-section">
+
+            <div class="section-header">
+                <h2>Material Allocations</h2>
+                <button id="addAllocationBtn">+ Allocate Material</button>
+            </div>
+
+            <div class="table-controls">
+                <input type="search" id="allocationSearch"
+                    placeholder="Search allocations...">
+
+                <select id="allocationFilter">
+                    <option value="">All Statuses</option>
+                    <option value="Allocated">Allocated</option>
+                    <option value="Pending">Pending</option>
+                </select>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Allocation ID</th>
+                            <th>Material</th>
+                            <th>Quantity</th>
+                            <th>Project</th>
+                            <th>Task</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="allocationTable">
+                        <tr>
+                            <td>ALC001</td>
+                            <td>Cement</td>
+                            <td>50 Bags</td>
+                            <td>Residential Building</td>
+                            <td>Foundation Work</td>
+                            <td>2026-11-20</td>
+                            <td><span class="allocation-status allocated">Allocated</span></td>
+                        </tr>
+
+                        <tr>
+                            <td>ALC002</td>
+                            <td>Iron Rods</td>
+                            <td>100 Pieces</td>
+                            <td>Commercial Complex</td>
+                            <td>Electrical Installation</td>
+                            <td>2026-11-21</td>
+                            <td><span class="allocation-status pending">Pending</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+
+        <div class="modal" id="allocationModal">
+            <div class="modal-content">
+
+                <button type="button" id="closeAllocationModal">×</button>
+
+                <h2>Allocate Material</h2>
+
+                <form id="allocationForm">
+
+                    <label>Material</label>
+                    <select id="allocationMaterial" required>
+                        <option value="">Select Material</option>
+                        <option>Cement</option>
+                        <option>Iron Rods</option>
+                        <option>Paint</option>
+                        <option>Roofing Sheets</option>
+                    </select>
+
+                    <label>Quantity</label>
+                    <input type="number" id="allocationQuantity"
+                        min="1" required>
+
+                    <label>Project</label>
+                    <select id="allocationProject" required>
+                        <option value="">Select Project</option>
+                        <option>Residential Building</option>
+                        <option>Commercial Complex</option>
+                        <option>Road Construction</option>
+                    </select>
+
+                    <label>Task</label>
+                    <select id="allocationTask" required>
+                        <option value="">Select Task</option>
+                        <option>Foundation Work</option>
+                        <option>Electrical Installation</option>
+                        <option>Road Surfacing</option>
+                    </select>
+
+                    <label>Allocation Date</label>
+                    <input type="date" id="allocationDate" required>
+
+                    <label>Status</label>
+                    <select id="allocationStatus">
+                        <option>Allocated</option>
+                        <option>Pending</option>
+                    </select>
+
+                    <button type="submit">Save Allocation</button>
+
+                </form>
+            </div>
+        </div>
+
+    </main>
+</div>
+
+<script src="js/material-allocation.js"></script>
+</body>
+</html>

@@ -1,0 +1,172 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BuildTrack - Tasks Management</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/tasks.css">
+</head>
+<body>
+
+<div class="dashboard-container">
+
+    <aside class="sidebar">
+        <h2>BuildTrack</h2>
+        <nav>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="inventory.html">Inventory</a>
+            <a href="stock-alerts.html">Stock Alerts</a>
+            <a href="projects.html">Projects</a>
+            <a href="tasks.html" class="active">Tasks</a>
+            <a href="material-allocation.html">Material Allocation</a>
+            <a href="suppliers.html">Suppliers</a>
+            <a href="reports.html">Reports</a>
+            <a href="index.html">Logout</a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <h1>Tasks Management</h1>
+            <p>Manage and monitor construction tasks</p>
+        </header>
+
+        <section class="summary-cards">
+            <div class="summary-card">
+                <h3>Total Tasks</h3>
+                <p>24</p>
+            </div>
+            <div class="summary-card">
+                <h3>Pending Tasks</h3>
+                <p>08</p>
+            </div>
+            <div class="summary-card">
+                <h3>In Progress</h3>
+                <p>10</p>
+            </div>
+            <div class="summary-card">
+                <h3>Completed</h3>
+                <p>06</p>
+            </div>
+        </section>
+
+        <section class="tasks-section">
+
+            <div class="section-header">
+                <h2>All Tasks</h2>
+                <button id="addTaskBtn">+ Add Task</button>
+            </div>
+
+            <div class="table-controls">
+                <input type="search" id="taskSearch"
+                    placeholder="Search tasks...">
+
+                <select id="taskFilter">
+                    <option value="">All Statuses</option>
+                    <option value="Pending">Pending</option>
+                    <option value="In Progress">In Progress</option>
+                    <option value="Completed">Completed</option>
+                </select>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Task ID</th>
+                            <th>Task Name</th>
+                            <th>Project</th>
+                            <th>Assigned To</th>
+                            <th>Start Date</th>
+                            <th>Due Date</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="taskTable">
+                        <tr>
+                            <td>TSK001</td>
+                            <td>Foundation Work</td>
+                            <td>Residential Building</td>
+                            <td>Kwame Mensah</td>
+                            <td>2026-11-01</td>
+                            <td>2026-12-01</td>
+                            <td><span class="status progress">In Progress</span></td>
+                            <td><button class="edit-button">Edit</button></td>
+                        </tr>
+
+                        <tr>
+                            <td>TSK002</td>
+                            <td>Electrical Installation</td>
+                            <td>Commercial Complex</td>
+                            <td>John Asare</td>
+                            <td>2026-11-05</td>
+                            <td>2026-12-10</td>
+                            <td><span class="status pending">Pending</span></td>
+                            <td><button class="edit-button">Edit</button></td>
+                        </tr>
+
+                        <tr>
+                            <td>TSK003</td>
+                            <td>Road Surfacing</td>
+                            <td>Road Construction</td>
+                            <td>Peter Owusu</td>
+                            <td>2026-10-01</td>
+                            <td>2026-11-20</td>
+                            <td><span class="status completed">Completed</span></td>
+                            <td><button class="edit-button">Edit</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+
+        <div class="modal" id="taskModal">
+            <div class="modal-content">
+                <button type="button" id="closeTaskModal">×</button>
+                <h2>Add New Task</h2>
+
+                <form id="taskForm">
+                    <label>Task Name</label>
+                    <input type="text" id="taskName" required>
+
+                    <label>Project</label>
+                    <select id="taskProject" required>
+                        <option value="">Select Project</option>
+                        <option>Residential Building</option>
+                        <option>Commercial Complex</option>
+                        <option>Road Construction</option>
+                    </select>
+
+                    <label>Assigned To</label>
+                    <input type="text" id="assignedTo" required>
+
+                    <label>Start Date</label>
+                    <input type="date" id="taskStartDate" required>
+
+                    <label>Due Date</label>
+                    <input type="date" id="taskDueDate" required>
+
+                    <label>Status</label>
+                    <select id="taskStatus">
+                        <option>Pending</option>
+                        <option>In Progress</option>
+                        <option>Completed</option>
+                    </select>
+
+                    <button type="submit">Save Task</button>
+                </form>
+            </div>
+        </div>
+
+    </main>
+</div>
+
+<script src="js/tasks.js"></script>
+</body>
+</html>
