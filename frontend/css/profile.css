@@ -1,0 +1,70 @@
+
+.profile-section {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.profile-card {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.profile-card h2 {
+    color: #172b4d;
+    margin-bottom: 20px;
+}
+
+.profile-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.profile-card label {
+    font-size: 14px;
+    color: #444;
+}
+
+.profile-card input:not([type="checkbox"]) {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.profile-card input:disabled {
+    background: #f1f2f4;
+    cursor: not-allowed;
+}
+
+.profile-card button {
+    background: #f28c28;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.profile-card button:hover {
+    background: #d97716;
+}
+
+.profile-card label:has(input[type="checkbox"]) {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+@media (max-width: 800px) {
+    .profile-section {
+        grid-template-columns: 1fr;
+    }
+}
