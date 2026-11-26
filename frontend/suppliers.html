@@ -1,0 +1,169 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BuildTrack - Suppliers</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/suppliers.css">
+</head>
+<body>
+
+<div class="dashboard-container">
+
+    <aside class="sidebar">
+        <h2>BuildTrack</h2>
+        <nav>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="inventory.html">Inventory</a>
+            <a href="stock-alerts.html">Stock Alerts</a>
+            <a href="projects.html">Projects</a>
+            <a href="tasks.html">Tasks</a>
+            <a href="material-allocation.html">Material Allocation</a>
+            <a href="suppliers.html" class="active">Suppliers</a>
+            <a href="reports.html">Reports</a>
+            <a href="index.html">Logout</a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <h1>Suppliers Management</h1>
+            <p>Manage construction material suppliers</p>
+        </header>
+
+        <section class="summary-cards">
+            <div class="summary-card">
+                <h3>Total Suppliers</h3>
+                <p>18</p>
+            </div>
+            <div class="summary-card">
+                <h3>Active Suppliers</h3>
+                <p>15</p>
+            </div>
+            <div class="summary-card">
+                <h3>Inactive Suppliers</h3>
+                <p>03</p>
+            </div>
+            <div class="summary-card">
+                <h3>Material Categories</h3>
+                <p>06</p>
+            </div>
+        </section>
+
+        <section class="suppliers-section">
+
+            <div class="section-header">
+                <h2>All Suppliers</h2>
+                <button id="addSupplierBtn">+ Add Supplier</button>
+            </div>
+
+            <div class="table-controls">
+                <input type="search" id="supplierSearch"
+                    placeholder="Search suppliers...">
+
+                <select id="supplierFilter">
+                    <option value="">All Statuses</option>
+                    <option value="Active">Active</option>
+                    <option value="Inactive">Inactive</option>
+                </select>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Supplier ID</th>
+                            <th>Supplier Name</th>
+                            <th>Contact Person</th>
+                            <th>Phone Number</th>
+                            <th>Email</th>
+                            <th>Location</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="supplierTable">
+                        <tr>
+                            <td>SUP001</td>
+                            <td>Ghana Cement Ltd</td>
+                            <td>Kwame Boateng</td>
+                            <td>0240000001</td>
+                            <td>info@ghanacement.com</td>
+                            <td>Accra</td>
+                            <td><span class="supplier-status active">Active</span></td>
+                            <td><button class="edit-button">Edit</button></td>
+                        </tr>
+
+                        <tr>
+                            <td>SUP002</td>
+                            <td>Prime Steel Supplies</td>
+                            <td>Daniel Mensah</td>
+                            <td>0240000002</td>
+                            <td>sales@primestreel.com</td>
+                            <td>Kumasi</td>
+                            <td><span class="supplier-status active">Active</span></td>
+                            <td><button class="edit-button">Edit</button></td>
+                        </tr>
+
+                        <tr>
+                            <td>SUP003</td>
+                            <td>BuildPro Materials</td>
+                            <td>Akosua Owusu</td>
+                            <td>0240000003</td>
+                            <td>contact@buildpro.com</td>
+                            <td>Takoradi</td>
+                            <td><span class="supplier-status inactive">Inactive</span></td>
+                            <td><button class="edit-button">Edit</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+
+        <div class="modal" id="supplierModal">
+            <div class="modal-content">
+
+                <button type="button" id="closeSupplierModal">×</button>
+
+                <h2>Add New Supplier</h2>
+
+                <form id="supplierForm">
+
+                    <label>Supplier Name</label>
+                    <input type="text" id="supplierName" required>
+
+                    <label>Contact Person</label>
+                    <input type="text" id="contactPerson" required>
+
+                    <label>Phone Number</label>
+                    <input type="tel" id="supplierPhone" required>
+
+                    <label>Email</label>
+                    <input type="email" id="supplierEmail" required>
+
+                    <label>Location</label>
+                    <input type="text" id="supplierLocation" required>
+
+                    <label>Status</label>
+                    <select id="supplierStatus">
+                        <option>Active</option>
+                        <option>Inactive</option>
+                    </select>
+
+                    <button type="submit">Save Supplier</button>
+
+                </form>
+            </div>
+        </div>
+
+    </main>
+</div>
+
+<script src="js/suppliers.js"></script>
+</body>
+</html>

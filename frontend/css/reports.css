@@ -1,0 +1,77 @@
+
+.reports-section,
+.report-preview {
+    background: #ffffff;
+    padding: 25px;
+    margin-top: 25px;
+    border-radius: 10px;
+}
+
+.reports-section h2,
+.report-preview h2 {
+    color: #243447;
+    margin-bottom: 20px;
+}
+
+#reportForm {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 500px;
+}
+
+#reportForm input,
+#reportForm select {
+    padding: 11px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#reportForm button {
+    background: #f28c28;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.reports-section table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.reports-section th,
+.reports-section td {
+    padding: 13px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+}
+
+.reports-section th {
+    background: #f4f6f9;
+    color: #243447;
+}
+
+.view-button {
+    background: #243b55;
+    color: white;
+    border: none;
+    padding: 7px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.report-preview {
+    min-height: 120px;
+}
+
+#previewMessage {
+    color: #64748b;
+    line-height: 1.6;
+}
+
+.table-container {
+    overflow-x: auto;
+}

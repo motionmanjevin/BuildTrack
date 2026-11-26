@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BuildTrack - Reports</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/reports.css">
+</head>
+<body>
+
+<div class="dashboard-container">
+
+    <aside class="sidebar">
+        <h2>BuildTrack</h2>
+        <nav>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="inventory.html">Inventory</a>
+            <a href="stock-alerts.html">Stock Alerts</a>
+            <a href="projects.html">Projects</a>
+            <a href="tasks.html">Tasks</a>
+            <a href="material-allocation.html">Material Allocation</a>
+            <a href="suppliers.html">Suppliers</a>
+            <a href="reports.html" class="active">Reports</a>
+            <a href="index.html">Logout</a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <h1>Reports Management</h1>
+            <p>Generate and review construction management reports</p>
+        </header>
+
+        <section class="summary-cards">
+            <div class="summary-card">
+                <h3>Total Reports</h3>
+                <p>24</p>
+            </div>
+            <div class="summary-card">
+                <h3>Inventory Reports</h3>
+                <p>08</p>
+            </div>
+            <div class="summary-card">
+                <h3>Project Reports</h3>
+                <p>10</p>
+            </div>
+            <div class="summary-card">
+                <h3>Task Reports</h3>
+                <p>06</p>
+            </div>
+        </section>
+
+        <section class="reports-section">
+
+            <h2>Generate Report</h2>
+
+            <form id="reportForm">
+
+                <label>Report Type</label>
+                <select id="reportType" required>
+                    <option value="">Select Report Type</option>
+                    <option>Inventory Report</option>
+                    <option>Project Progress Report</option>
+                    <option>Task Completion Report</option>
+                    <option>Material Allocation Report</option>
+                    <option>Supplier Report</option>
+                </select>
+
+                <label>Start Date</label>
+                <input type="date" id="reportStartDate" required>
+
+                <label>End Date</label>
+                <input type="date" id="reportEndDate" required>
+
+                <button type="submit">Generate Report</button>
+
+            </form>
+
+        </section>
+
+        <section class="reports-section">
+
+            <h2>Generated Reports</h2>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Report ID</th>
+                            <th>Report Name</th>
+                            <th>Date Generated</th>
+                            <th>Period</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="reportTable">
+                        <tr>
+                            <td>RPT001</td>
+                            <td>Inventory Report</td>
+                            <td>2026-11-20</td>
+                            <td>November 2026</td>
+                            <td><button class="view-button">View</button></td>
+                        </tr>
+
+                        <tr>
+                            <td>RPT002</td>
+                            <td>Project Progress Report</td>
+                            <td>2026-11-21</td>
+                            <td>November 2026</td>
+                            <td><button class="view-button">View</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+
+        <section class="report-preview" id="reportPreview">
+            <h2>Report Preview</h2>
+            <p id="previewMessage">
+                Select a report and generate it to see the preview here.
+            </p>
+        </section>
+
+    </main>
+</div>
+
+<script src="js/reports.js"></script>
+</body>
+</html>
